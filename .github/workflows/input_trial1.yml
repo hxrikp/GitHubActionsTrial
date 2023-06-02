@@ -2,7 +2,7 @@ name: hey-you
 on: 
   workflow_dispatch:
     inputs:
-      who-to-greet:
+      name:
         description: 'Who to greet'
         required: true
         default: 'Hari'
@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send greeting
-        run: echo "Hello ${{github.event.inputs.who-to-greet}}"
+        run: echo "Hello ${{ github.event.inputs.name }}"
